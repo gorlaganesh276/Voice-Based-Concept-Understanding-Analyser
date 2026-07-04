@@ -183,3 +183,17 @@ vbcua_project/
     ├── sample_audio.wav
     └── reports/
 ```
+----
+# 🚀 Launch Application
+## Make sure your virtual environment (vbcu_env) is activated:
+
+bash
+source vbcu_env/bin/activate   # Linux/Mac
+vbcu_env\Scripts\activate      # Windows
+Run the Streamlit app:
+
+bash
+streamlit run app.py
+### This will open a local server (usually at http://localhost:8501) in your browser.
+
+----
