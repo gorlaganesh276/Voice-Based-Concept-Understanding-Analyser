@@ -238,4 +238,4 @@ streamlit run app.py
 
   - Subjective analysis (AI-driven semantic similarity)
 
--Generates evaluation results → later used in reports (Epic 3 & 4).
+- Generates evaluation results → later used in reports (Epic 3 & 4).
