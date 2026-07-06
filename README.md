@@ -217,25 +217,34 @@ streamlit run app.py
 # 📂 Project Structure
 
 ```
-vbcua_project/
+Voice-Based-Concept-Understanding-Analyser/
 │
 ├── app.py
-├── audio_utils.py
-├── speech_to_text.py
-├── semantic_eval.py
-├── scoring_engine.py     
-├── report_generator.py 
 ├── requirements.txt
-├── tests/
-│   ├── test_audio_utils.py
-│   ├── test_speech_to_text.py
-│   ├── test_semantic_eval.py
-│   ├── test_scoring_engine.py
-│   └── test_report_generator.py
+├── README.md
 │
-└── data/
-    ├── sample_audio.wav
-    └── reports/
+├── models/
+│   ├── whisper_model.py
+│   ├── semantic_model.py
+│   └── scoring.py
+│
+├── audio/
+│   ├── extractor.py
+│   ├── preprocessing.py
+│   └── waveform.py
+│
+├── reports/
+│   └── pdf_generator.py
+│
+├── database/
+│   └── database.py
+│
+├── reference/
+│   └── concepts.json
+│
+├── uploads/
+├── outputs/
+└── assets/
 ```
 ----
 
@@ -252,105 +261,3 @@ streamlit run app.py
 #### This will open a local server (usually at http://localhost:8501) in your browser.
 
 ----
-# 🧠 Epic 2 – Core Intelligence Flow
-## Modules & Flow
-## 1. Speech-to-Text (Whisper)
-
-- Input: Uploaded audio file
-
-- Output: Transcript text
-
-⬇️ feeds into both semantic analysis and scoring engine
-
-## 2. Semantic Similarity Engine (Sentence-BERT)
-
-- Input: Transcript + Reference Concepts
-
-- Output: Similarity scores (conceptual alignment)
-
-## 3. Audio Feature Extraction (Librosa)
-
-- Input: Raw audio file
-
-- Output: Deterministic metrics (pause ratio, RMS energy, zero-crossing rate)
-
-## 4. Scoring Engine
-
-- Combines semantic scores + audio metrics
-
-- Produces evaluation result:
-
-  - Overall score
-
-  - Understanding level (Strong / Moderate / Poor)
-
-  - Notes
-  
------
-
-## Outcome
-- Hybrid evaluation pipeline:
-
-  - Objective metrics (deterministic audio features)
-
-  - Subjective analysis (AI-driven semantic similarity)
-
-- Generates evaluation results → later used in reports (Epic 3 & 4).
-  
------
-
-# 🧠 Semantic Evaluation Workflow
-## 1. Generate Embeddings
-Use Sentence‑BERT to encode both the student’s explanation and the reference concept(s) into dense vector embeddings.
-
-python
-from sentence_transformers import SentenceTransformer
-
-# Load pre-trained Sentence-BERT model
-model = SentenceTransformer('all-MiniLM-L6-v2')
-
-# Example inputs
-student_explanation = "Photosynthesis is the process by which plants make food using sunlight."
-reference_concept = "Photosynthesis converts light energy into chemical energy in plants."
-
-# Generate embeddings
-student_embedding = model.encode(student_explanation)
-reference_embedding = model.encode(reference_concept)
-
----- 
-
-## 2. Compute Cosine Similarity
-Cosine similarity quantifies how close the student’s explanation is to the reference concept.
-
-python
-from sklearn.metrics.pairwise import cosine_similarity
-import numpy as np
-
-similarity_score = cosine_similarity(
-    [student_embedding],
-    [reference_embedding]
-)[0][0]
-
-print("Raw similarity score:", similarity_score)
-
----- 
-
-## 3. Normalize Scores
-To ensure consistent interpretation across evaluations, normalize the similarity score to a 0–100 scale.
-
-python
-Normalization: cosine similarity ranges from -1 to 1
-normalized_score = (similarity_score + 1) / 2 * 100
-print("Normalized similarity score:", round(normalized_score, 2))
-
-----
-
-# ✅ Outcome
-
-- Embeddings capture semantic meaning of both student and reference text.
-
-- Cosine similarity provides a quantitative measure of conceptual alignment.
-
-Normalized scores make results interpretable and consistent across different evaluations (e.g., 0–100 scale for reporting).
-
------
