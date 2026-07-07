@@ -1,4 +1,5 @@
 # Voice-Based-Concept-Understanding-Analyser
+
 A Voice-Based Concept Understanding Analyser is an AI system that converts speech into text, interprets meaning using NLP, and extracts key ideas for better comprehension. It enables interactive learning, intent detection, and real-time feedback across education, business, and accessibility.
 
 # 📊 SystemOverview: Audio Evaluation & Analysis Platform
@@ -24,39 +25,27 @@ A Voice-Based Concept Understanding Analyser is an AI system that converts speec
 ----
 
 # ⚙️ Technology Stack
+
 - Python → Core programming language
-
 - FastAPI → Backend API framework
-
 - Streamlit → Interactive web UI
-
 - Librosa → Audio feature extraction
-
 - Whisper → Speech‑to‑text transcription
-
 - Sentence‑BERT → Semantic similarity analysis
-
 - ReportLab → Automated PDF report generation
-
 - Visual Studio Code → Development environment
-- 
+  
 ----
 
 # 📚 Reference Links
+
 - Python
-
 - FastAPI
-
 - Streamlit
-
 - Librosa
-
 - Whisper
-
 - Sentence‑BERT
-
 - ReportLab
-
 - Visual Studio Code
   
 ---
@@ -89,12 +78,6 @@ This platform is designed to support:
 - 📑 Report Generation
 
 - ⏱️ Session Tracking for User Engagement
-
-----
-
-# 🧭 Project Flow Overview
-## Definition
-### Project Flow is the structured sequence of phases and tasks that guide a project from initiation to completion. It acts as a roadmap for teams to execute work efficiently, manage resources, and monitor progress toward objectives.
 
 ----
 
@@ -152,66 +135,6 @@ Check Python version:
 bash
 python -version✅ Must be 3.10+ (recommended: 3.10 or 3.11 for Whisper & Sentence‑BERT compatibility).
 
-------
-
-## 4. Test Imports
-Run a quick script (test_imports.py) to confirm modules load correctly:
-
-python
-import streamlit
-import whisper
-from sentence_transformers import SentenceTransformer
-import librosa
-import soundfile as sf
-import matplotlib
-import reportlab
-import nltk
-
-print("✅ All libraries imported successfully!")
-Execute:
-
-bash
-python test_imports.py
-
------
-
-## 5. Validate Core Components
-### - Speech Transcription (Whisper)
-
-python
-model = whisper.load_model("base")
-result = model.transcribe("sample_audio.wav")
-print(result["text"])
-Semantic Similarity (Sentence‑BERT)
-
-python
-model = SentenceTransformer('all-MiniLM-L6-v2')
-embeddings = model.encode(["Hello world", "Hi there"])
-print("✅ Semantic embeddings generated")
-
------
-
-### - Audio Feature Extraction (Librosa)
-
-python
-y, sr = librosa.load("sample_audio.wav")
-zcr = librosa.feature.zero_crossing_rate(y)
-print("Zero Crossing Rate:", zcr.mean())
-UI Rendering (Streamlit)
-
-bash
-streamlit run app.py
-
------
-
-# ✅ Outcome
-- Isolated environment (vbcu_env) ensures reproducibility.
-
-- All dependencies installed and verified.
-
-- Core modules tested without runtime errors.
-
-- Ready for development and deployment.
 -----
 
 # 📂 Project Structure
@@ -222,26 +145,20 @@ Voice-Based-Concept-Understanding-Analyser/
 ├── app.py
 ├── requirements.txt
 ├── README.md
-│
 ├── models/
 │   ├── whisper_model.py
 │   ├── semantic_model.py
 │   └── scoring.py
-│
 ├── audio/
 │   ├── extractor.py
 │   ├── preprocessing.py
 │   └── waveform.py
-│
 ├── reports/
 │   └── pdf_generator.py
-│
 ├── database/
 │   └── database.py
-│
 ├── reference/
 │   └── concepts.json
-│
 ├── uploads/
 ├── outputs/
 └── assets/
@@ -252,8 +169,8 @@ Voice-Based-Concept-Understanding-Analyser/
 ## Make sure your virtual environment (vbcu_env) is activated:
 ```
 bash
-source vbcu_env/bin/activate   # Linux/Mac
-vbcu_env\Scripts\activate      # Windows
+source .venv/bin/activate   # Linux/Mac
+.venv\Scripts\activate      # Windows
 Run the Streamlit app:
 ```
 bash
@@ -261,3 +178,17 @@ streamlit run app.py
 #### This will open a local server (usually at http://localhost:8501) in your browser.
 
 ----
+# Sample output
+<img width="1828" height="862" alt="Screenshot 2026-07-07 060654" src="https://github.com/user-attachments/assets/ce1c1cb6-bdbe-4de3-aa53-9f19429b85a6" />
+
+----
+# Team Members
+Baddi Chetan
+Chilekam Palli Ganga Dinesh Reddy (Team Lead)
+Eragamreddy Kousalya
+Dokka Likhitha
+Meruva Subha Sankar
+-----
+
+
+
