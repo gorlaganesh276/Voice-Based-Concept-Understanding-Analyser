@@ -1,3 +1,4 @@
+HEAD
 # 🎤 Voice-Based Concept Understanding Analyser (VBCUA)
 
 ## 📌 Overview
@@ -205,3 +206,6 @@ This project is developed for educational purposes as part of the Google Cloud G
 - Librosa
 - ReportLab
 - Google Cloud Generative AI Skill Wallet.
+=======
+# Voice-Based-Concept-Understanding-Analyser
+7d19792829b237137959a2ff1300e14110b68ac1
