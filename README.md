@@ -183,11 +183,11 @@ streamlit run app.py
 #  ** Voice-Based Concept Understanding Analyser (VBCUA) Project **
 ## 👨‍💻 Team Members
 ```
-Baddi Chetan
-Chilekam Palli Ganga Dinesh Reddy (Team Lead)
-Eragamreddy Kousalya
-Dokka Likhitha
-Meruva Subha Sankar
+Gorla Ganesh
+Bala Navya Sree
+Sampath Reddy
+Mohan Kumar Byri
+Bingi Reddeppa
 ```
 -----
 
