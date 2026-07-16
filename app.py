@@ -22,6 +22,10 @@ st.set_page_config(
     layout="wide"
 )
 from database.database import create_database, save_result
+import inspect
+
+st.write("Function:", inspect.signature(save_result))
+st.write("File:", inspect.getfile(save_result))
 from reports.pdf_generator import generate_pdf
 
 create_database()
